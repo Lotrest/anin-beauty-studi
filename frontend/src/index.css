@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@keyframes glowShadow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.45); /* старт */
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.85); /* пик свечения */
+  }
+}
+
+/* Класс, который ты повесил на <img> */
+.animate-glowShadow {
+  animation: glowShadow 6s ease-in-out infinite;
+}
+
+.glass-inner {
+  background: rgba(255, 255, 255, 0.05); /* прозрачный белый */
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border-radius: 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+   0 0 25px rgba(255, 215, 0, 0.6),
+  0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  background: transparent;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: none;
+}
+
+/* Ширина полосы прокрутки */
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background:#fff7e0;
+  box-shadow: 0 0 20px rgba(251, 209, 85, 0.9) inset;
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(180deg, #FFD700, #D6A85A);
+  border-radius: 10px;
+  border:2px solid #fff7e0 ;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(180deg, #F0C000, #B8860B);
+}
+
+
+
+/* Золотой скролл для блока выбора мастера */
+.scrollbar-anin::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollbar-anin::-webkit-scrollbar-track {
+  background: #fff7e0; /* светло-золотистый фон дорожки */
+  border-radius: 10px;
+}
+
+.scrollbar-anin::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FFD700, #D6A85A); /* золотой градиент */
+  border-radius: 10px;
+  border: 2px solid #fff7e0; /* делает "просвет" между ползунком и краем */
+}
+
+.scrollbar-anin::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #F0C000, #B8860B);
+}
+
+.scrollbar-anin {
+  overflow-y: overlay; /* более аккуратный рендер */
+  border-radius: 1.5rem;
+  clip-path: inset(0 round 1.5rem); /* обрезает всё, что выходит за закругления */
+}
+
+body {
+  background: rgba(0, 0, 0, 0.01);
+}
+
+.blocked-day {
+    background-color: #ffe6e6 !important;
+    color: #b30000 !important;
+    border-radius: 8px;
+    cursor: not-allowed !important;
+    opacity: 0.6 !important;
+}
+
+/* Рабочие дни (мастер работает) */
+.allowed-day {
+    background-color: #e8fff2 !important;
+    color: #006622 !important;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
